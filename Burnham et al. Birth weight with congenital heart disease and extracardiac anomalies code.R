@@ -343,7 +343,7 @@ sum <- sum |>
 sum |>
   ggplot() +
   geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = 4.5),
-            alpha = 0.03, color = "grey") +
+            alpha = 0.02, color = "grey") +
   geom_point(aes(x = mean, y = anomaly)) +
   geom_vline(aes(xintercept = 0), linetype = "dashed") +
   geom_errorbarh(aes(y = anomaly, xmin = lo_ci, xmax = hi_ci), 
@@ -355,6 +355,8 @@ sum |>
   labs(
     y = "Anomalies Present",
     x = "Mean Birth Weight z-score") 
+
+ggsave("Figure 2.png", units = "in", width = 8, height = 4)
 anova<-aov(bw_z_internal ~ anomaly,
            data = df|>
              select(anomaly, bw_z_internal))
@@ -404,7 +406,7 @@ ggplot() +
     x = "Mean Birth Weight z-score"
   ) 
 
-ggsave("aaaaa.png", units = "in", width = 8, height = 4)
+ggsave("Figure 3.png", units = "in", width = 8, height = 4)
 
 #anova 
 anova <- df |>
