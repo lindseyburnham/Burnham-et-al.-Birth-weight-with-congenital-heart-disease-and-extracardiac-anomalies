@@ -2,20 +2,11 @@
 ## Data from https://www.nber.org/research/data/vital-statistics-natality-birth-data
 
 ## 0. Libraries
-library(dplyr)
-library(readr)
-library(broom)
-library(emmeans)
-library(ggplot2)
-library(forcats)
 library(tidyverse)
 library(data.table)
 library(gtsummary)
 library(ggeffects)
-library(ggrepel)
-library(arsenal)
-library(purrr)
-library(knitr)
+library(gt)
 library(scales)
 
 ## load in data
@@ -503,4 +494,10 @@ anoms|>
 int_table<-tbl_regression(int_chd_anom)
 as_gt(int_table)
 
-
+####citations
+citation("tidyverse")
+citation("data.table")
+citation("gtsummary")
+citation("ggeffects")
+citation("gt")
+citation("scales")
